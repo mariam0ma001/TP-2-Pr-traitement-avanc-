@@ -83,7 +83,7 @@ num_cols=x_train.select_dtypes(include=np.number).columns.tolist()
 cat_cols=x_train.select_dtypes(include="str").columns.tolist()
 print("variables numeriques :",num_cols)
 print("variables categorielles :",cat_cols)
-#region w canal kaymtolo categories machi quantites n9dro nst3mlo onhotencoding mn b3d
+
 #10
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
@@ -242,12 +242,12 @@ print(y_train.value_counts(normalize=True) * 100)
 
 eff=y_train.value_counts()
 rapport=eff.loc[0]/eff.loc[1]#2194/206
-print("le rapport entre les deaux classes :",rapport)#mo9abil kola transaction li fraude kayan 10 li normal
+print("le rapport entre les deaux classes :",rapport)
 
 #23 randomoversampling
 from imblearn.over_sampling import RandomOverSampler
 ranov = RandomOverSampler(random_state=42)
-x_train_over,y_train_over=ranov.fit_resample(x_train,y_train)#x data li ghay3awd ynnsekh mnha w y sinf li khso ywazn
+x_train_over,y_train_over=ranov.fit_resample(x_train,y_train)
 
 print("avant randomoversamling :")
 print(y_train.value_counts())
